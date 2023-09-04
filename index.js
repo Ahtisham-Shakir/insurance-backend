@@ -93,6 +93,8 @@ app.get("/admin/getinsurance/:userid", (req, res) => {
   });
 });
 
+const port = process.env.PORT || 3000;
+
 // Connecting to MongoDB
 mongoose
   .connect("mongodb+srv://shaam:shaam777@cluster0.bps2guq.mongodb.net/", {
@@ -101,7 +103,7 @@ mongoose
   })
   .then(() => {
     console.log("Connected to MongoDB");
-    app.listen(3001);
+    app.listen(port);
   })
   .catch((err) => console.log(err));
 
